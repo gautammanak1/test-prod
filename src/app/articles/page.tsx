@@ -3,7 +3,8 @@ import { type Metadata } from 'next'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { formatDate } from '@/lib/formatDate'
-import { type ExternalArticle, type ArticleType } from '@/lib/articles'
+import { type ArticleType } from '@/lib/articles'
+import { MediumArticles } from '@/components/medium-articles'
 
 function Article({ article }: { article: ArticleType }) {
   const isExternal = 'url' in article
@@ -35,38 +36,16 @@ function Article({ article }: { article: ArticleType }) {
     </article>
   )
 }
-
 export const metadata: Metadata = {
   title: 'Articles',
   description:
     'All of my long-form thoughts on programming, leadership, product creator, and more, collected in chronological order.',
 }
-
 export default async function ArticlesIndex() {
   const articles = await getAllArticles()
-
-  // Add Medium articles
-  const mediumArticles: ExternalArticle[] = [
-    {
-      title: '10 Must-Have VSCode Extensions for Web Development',
-      description:
-        'Visual Studio Code is one of the most widely-used source code editors out there, with over 136k stars on GitHub. Its popularity comes about due to its lightness, flexibility, open-source nature, simplicity, and extensibility.',
-      date: '2024-01-15',
-      url: 'https://medium.com/@gautammanak1/10-must-have-vscode-extensions-for-web-development-44b0d129ae56',
-    },
-    {
-      title: '🙌 7 Tips to Build Your GitHub Profile Like a PRO 🚀',
-      description:
-        'Here’s an example of my GitHub Profile. Let’s dive into how you can get your profile looking just as good in the next 10 minutes.',
-      date: '2024-01-15',
-      url: 'https://medium.com/@gautammanak1/7-tips-to-build-your-github-profile-like-a-pro-75b648f24f55',
-    },
-  ]
-
-  const allArticles: ArticleType[] = [...mediumArticles, ...articles]
-
+  const allArticles: ArticleType[] = [ ...articles]
   return (
-    <SimpleLayout
+<SimpleLayout
       title="Crafting Clear and Compelling Technical Stories"
       intro="All of my long-form thoughts on programming, leadership, product creator, and more, collected in chronological order."
     >
@@ -75,11 +54,15 @@ export default async function ArticlesIndex() {
           {allArticles.map((article) => (
             <Article
               key={'slug' in article ? article.slug : article.url}
-              article={article}
-            />
+              article={article} />
           ))}
         </div>
+      </div> 
+      <div  className="mt-12"  >
+      <MediumArticles/>
       </div>
+
     </SimpleLayout>
+
   )
 }

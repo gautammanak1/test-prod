@@ -1,49 +1,57 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-
+import { ServicesSectionWithMotion } from '@/components/ServicesSectionWithMotion'
+import { Bitcoin, Bot, ClipboardList, Github, LayoutDashboardIcon } from 'lucide-react'
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'GitHub Agent',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'GitHub Agent simplifies managing GitHub repositories by automating detailed retrieval of information, issue creation, and repository comparison. It helps developers save time and streamline their workflows, improving overall productivity and project management.',
+    link: { href: 'https://github.com/gautammanak1/git-agent', label: 'github.com' },
+    logo: Github,
   },
   {
-    name: 'Animaginary',
+    name: 'GradPathAI',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'GradPath AI is an AI-powered platform designed to help students and recent graduates transition from academia to industry. It offers personalized career guidance, resume analysis, job search assistance, mentorship connections, and more, all powered by Fetch.ai technology.',
+    link: { href: 'https://github.com/gautammanak1/GradPathAI', label: 'github.com' },
+    logo: Bot,
   },
   {
-    name: 'HelioStream',
+    name: 'Ai-Agents',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'This repository contains a collection of AI agents developed using Fetch.ai technology, including uAgent, Agentverse, and DeltaV. Each agent is designed to perform specific tasks such as finding job listings, providing details about hackathons and events, recommending professional profiles, and retrieving vehicle details including challan information.',
+    link: { href: 'https://github.com/gautammanak1/Fetch.ai-agents', label: 'github.com' },
+    logo: Bot,
   },
   {
-    name: 'cosmOS',
+    name: 'To-Do List',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'This is a simple To-Do List web application built with React and Firebase for user authentication. With this app, you can create and manage your to-do tasks securely using Firebase authentication. It provides a responsive and intuitive user interface for managing your tasks.',
+    link: { href: 'https://github.com/gautammanak1/Todo-List', label: 'github.com' },
+    logo: ClipboardList,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Xcrypto App',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'This is a crypto web App where you can check the all crypto currency present in the market with real time market price and the scaling percentage of the of the crypto currency with total market cap.',
+    link: { href: 'https://xcrypto-app-ten.vercel.app/', label: 'xcrypto.app' },
+    logo: Bitcoin,
+  },
+  {
+    name: 'Periodic Table of Elements',
+    description:
+      'The periodic table is a tabular course of action of the chemical components by increasing atomic number which shows the components with the goal that one may see slants in their properties.',
+    link: { href: 'https://gautammanak1.github.io/Periodic-Table-of-Elements/', label: 'periodic.table.com' },
+    logo: LayoutDashboardIcon,
+  },
+  {
+    name: 'MonkHood',
+    description:
+      'Utilize the comprehensive features of the platform to seamlessly create, edit, and delete events, appointments, and tasks,fostering collaboration by inviting others, all while strategically employing metrics to quantify impact, enhanceproductivity, and maintain a harmonious balance between professional and personal commitments.',
+    link: { href: 'https://monkhood.vercel.app/', label: 'Monkhood.com' },
+    logo: ClipboardList,
   },
 ]
 
@@ -77,12 +85,7 @@ export default function Projects() {
         {projects.map((project) => (
           <Card as="li" key={project.name}>
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-              />
+            <project.logo className="h-6 w-6" />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
               <Card.Link href={project.link.href}>{project.name}</Card.Link>
@@ -92,9 +95,11 @@ export default function Projects() {
               <LinkIcon className="h-6 w-6 flex-none" />
               <span className="ml-2">{project.link.label}</span>
             </p>
+            
           </Card>
         ))}
       </ul>
+      <ServicesSectionWithMotion />
     </SimpleLayout>
   )
 }
