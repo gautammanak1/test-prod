@@ -30,6 +30,8 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/speaking">Speaking</NavLink>
+                <NavLink href="/Experience">Experience</NavLink>
+                <NavLink  href="/gallery">Gallery</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} ʜᴀʟꜰ_ᴇɴɢɪɴᴇᴇʀ™. All Rights Reserved.
