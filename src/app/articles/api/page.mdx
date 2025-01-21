@@ -1,0 +1,54 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Gautam Manak',
+  date: '2024-07-27',
+  title: 'Understanding API: A Simple Guide For Everyone 😀',
+  description:
+    'In this blog, we simplify the concept of API with a library example, introduce JSON, and explain how to use APIs for web projects.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+## Understanding API: A Simple Guide For Everyone 😀 
+
+Application Programming Interface, or API, is a term you may have come across frequently while working on web application projects. Despite its widespread use, many people find it challenging to understand what API actually is. In this blog, I aim to simplify the concept of API and illustrate it with a simple example.
+
+Let’s consider a library as an example.
+
+The library has different sections, each containing different books. Each book has its details, including the title, author name, year of publication, and publication name. This is the same format that API follows, with the information presented in JSON format.
+
+### Wait! Wait! Wait! But What is JSON? 🤔
+
+JSON, or JavaScript Object Notation, is a text-based format used for exchanging data between systems. It uses key-value pairs to represent data, where the keys are strings and the values can be either strings, numbers, booleans, arrays, or other JSON objects.
+
+### The Library Analogy
+
+Suppose you go to the library and make a request to the librarian (server) to bring a book you are wishing for. This request is called an API call. The librarian (server) will instruct you to the specific section (object) in which that book is present. You’ll see all the information related to the book on the cover page, like book title, author name, publish year, and publication. Now you can use this information as you need.
+
+Yeeeeaaa!!! 🥳🥳
+
+### Technically, How APIs Work
+
+To use APIs, you first need to find an API that suits your needs. For instance, if you want to create a weather web app that shows temperature, humidity, and atmospheric pressure, you can use the popular Open Weather Map API. Some APIs require authentication, in which case you’ll need to obtain an API key or other credentials from the API provider.
+
+Next, you need to understand the API endpoint, which is the URL where you make an HTTP request to retrieve data or perform an action. Endpoints have specific parameters that need to be included in the request to retrieve the desired data.
+
+Once you have the API endpoint, you can make a request using a programming language or tool such as Python, JavaScript, or Postman. The request should include the endpoint URL, any required parameters, and authentication credentials.
+
+The API will then return a response in a specified format, such as JSON or XML, which you need to parse in order to extract the data you need. This can typically be done using a library or tool in the programming language you are using.
+
+Finally, you can use the data in your application or store it for later use.
+
+In conclusion, we hope this blog has helped you understand the core concept of APIs.
+
+Give it a thumbs up and share it with your friends and on your social media.
+
+To stay in touch, Connect with me ✌🏻😁
+
+Happy learning!
