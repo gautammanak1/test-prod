@@ -11,7 +11,7 @@ export default function Newsletter() {
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    setMessage(''); // Reset message
+    setMessage(''); 
 
     if (!email) {
       setMessage('Please enter a valid email address.');

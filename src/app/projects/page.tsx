@@ -2,7 +2,7 @@ import { type Metadata } from 'next'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { ServicesSectionWithMotion } from '@/components/ServicesSectionWithMotion'
-import { Bitcoin, Bot, ClipboardList, Github, LayoutDashboardIcon } from 'lucide-react'
+import { Bitcoin, Bot, ClipboardList, Github, LayoutDashboardIcon, Twitter } from 'lucide-react'
 const projects = [
   {
     name: 'GitHub Agent',
@@ -52,6 +52,13 @@ const projects = [
       'Utilize the comprehensive features of the platform to seamlessly create, edit, and delete events, appointments, and tasks,fostering collaboration by inviting others, all while strategically employing metrics to quantify impact, enhanceproductivity, and maintain a harmonious balance between professional and personal commitments.',
     link: { href: 'https://monkhood.vercel.app/', label: 'Monkhood.com' },
     logo: ClipboardList,
+  },
+  {
+    name: 'Twitter Agent: Automating AI Tweet Posting with Fetch.ai SDK',
+    description:
+      'The Twitter Agent is responsible for receiving AI-generated content and automatically posting it on Twitter using the Twitter API. Built with the Fetch.ai SDK, it enables seamless agent-to-agent communication, acting as a bridge between the Search Agent, which generates tweet-worthy content, and the Twitter platform, ensuring smooth and automated posting.',
+    link: { href: 'https://github.com/gautammanak1/twitter-agent', label: 'github.com' },
+    logo: Twitter,
   },
 ]
 
